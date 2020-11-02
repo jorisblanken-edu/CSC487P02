@@ -1,0 +1,63 @@
+<!-- 
+    Emily Crumpler and Joris Blanken
+    CSC487 Project 2
+    This file provides an interface for testing the various functions
+    for the project
+
+    All functions within this program were created by Emily Crumpler
+    and Joris Blanken and were not obtained from other sources, 
+    with the exception of the hashing function
+-->
+
+
+<html>
+    <head>
+        <script src="main.js" type="module"></script>
+        <style>
+            body {
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>RSA Encryption/Decryption & Keygen</h2>
+        <button id="genKeyButton">Generate Keys</button><br>
+        [e, n] = <span id="rsaPublicKey">N/A</span><br>
+        [d, n] = <span id="rsaPrivateKey">N/A</span>
+
+        <br><br><hr>
+
+        <h2>Generate Certificate</h2>
+        Issuer: <input type="text" id="issuer"> <br>
+        Start Date: <input type="datetime-local" id="startDate"> <br>
+        End Date: <input type="datetime-local" id="endDate"> <br>
+        Public Key <input type="text" id="certificatePublicKey"> <br>
+        <button id="genCertButton">Generate Certificate</button><br>
+        Certificate: <pre id="certificate">N/A</pre>
+        <a id="downloadCert" download="gen.cer">Download Certificate</a>
+
+        <br><br><hr>
+
+        <h2>Sign document</h2>
+        Select Document to Sign <br>
+        <input type="file" id="documentFile"> <br>
+        Document: <pre id="selectedCertificate">N/A</pre>
+        Key: <input id="documentKey"> <br>
+
+
+        <button id="signDocButton">Sign</button><br>
+        Signed document: <code id="signedCertificate">N/A</code><br>
+
+        <a id="downloadSignedCert" download="signed.cer">Download Signed Certificate</a>
+
+        <br><br><hr>
+
+        <h2>Validate Certificate</h2>
+        Select File to Validate <br>
+        <input type="file" id="certificateFile"> <br>
+        Document: <code id="selectedSignedCertificate">N/A</code><br>
+        Key: <input id="validationKey"> <br>
+        <button id="validate">Check Validity</button><br>
+        Status: <span id="validity">N/A</span>
+    </body>
+</html>
